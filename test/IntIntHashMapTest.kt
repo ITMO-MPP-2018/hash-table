@@ -38,13 +38,8 @@ class IntIntHashMapTest {
 class IntIntHashMapSequential : VerifierState() {
     private val map = HashMap<Int, Int>()
 
-    @Operation
     fun put(key: Int, value: Int): Int = map.put(key, value) ?: 0
-
-    @Operation
     fun remove(key: Int): Int = map.remove(key) ?: 0
-
-    @Operation
     fun get(key: Int): Int = map.get(key) ?: 0
 
     override fun extractState() = map
